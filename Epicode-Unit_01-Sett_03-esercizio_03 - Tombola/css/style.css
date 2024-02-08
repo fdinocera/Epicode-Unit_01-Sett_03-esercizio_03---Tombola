@@ -1,0 +1,38 @@
+body,
+html{
+    margin: 10px;
+    padding: 0;
+}
+
+.riga {
+    /* border: 1px solid red; */
+    width: 70%;
+    height: 4rem;
+    text-align: center;    
+}
+
+
+.cella {
+    display: inline-block;
+    border: 1px solid rgb(43, 43, 43);
+    height: 100%;
+    width: 8%;    
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.numero{    
+    vertical-align: middle;
+    padding: 1rem 0.5rem;
+}
+
+
+.cellaEvidenziata {
+    display: inline-block;
+    border: 1px solid rgb(43, 43, 43);
+    height: 100%;
+    width: 8%;    
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: red;
+}

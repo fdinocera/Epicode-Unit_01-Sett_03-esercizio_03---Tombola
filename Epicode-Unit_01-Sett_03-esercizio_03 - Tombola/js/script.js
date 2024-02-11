@@ -1,10 +1,8 @@
-
-
-
-
 //html
 const griglia = document.getElementById('griglia');
 const button = document.getElementById('button');
+const estratto = document.getElementById('estratto');
+const button2 = document.getElementById('button2');
 
 //variabili globali
 let numeri = [];
@@ -24,7 +22,6 @@ const stampaGriglia = () => {
         riga.classList.add("riga");
 
         for (let i = 0; i < 10; i++) {
-
             const cella = document.createElement('div');
 
             //evidenzia numero estratto
@@ -37,7 +34,6 @@ const stampaGriglia = () => {
             const divNumero = document.createElement('div');
             divNumero.innerText = index++;
             divNumero.classList.add('numero');
-
             cella.appendChild(divNumero);
             riga.appendChild(cella);
         }
@@ -45,34 +41,40 @@ const stampaGriglia = () => {
     }
 };
 
-
-
 const estraiNumero = () => {
 
-    let n = Math.floor(Math.random() * 90 + 1);
-
-    const found = numeriEstratti.indexOf(n);
-    console.log('found ' + found);
-
-    if (found > 0) {
-        estraiNumero();
+    //gioco completato
+    if (numeriEstratti.length == 90) {
+        return;
     }
-    console.log('found ' + found);
 
-    
+    let n = Math.floor(Math.random() * 90 + 1);
+    const found = numeriEstratti.indexOf(n);
+    if (found > -1) {
+        estraiNumero();
+    } else {
+        numeriEstratti.push(n);
 
-    numeriEstratti.push(n);
-    console.log(numeriEstratti);
+        //crea div testo
+        estratto.innerHTML = '';
+        const testo = document.createElement('div');
+        testo.innerText = n;
+        estratto.appendChild(testo);
+    }
 };
 
-
-
-
-
+//click estrai numero
 button.addEventListener('click', function () {
     estraiNumero();
     stampaGriglia();
-
 });
 
-stampaGriglia();
+//click rigioca
+button2.addEventListener('click', function () {
+    numeriEstratti = [];
+    estratto.innerHTML = '';
+    stampaGriglia();
+});
+
+//inizio
+addEventListener('load', stampaGriglia);

@@ -1,38 +1,75 @@
 body,
-html{
+html {
     margin: 10px;
     padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #cfb53b;
 }
 
 .riga {
-    /* border: 1px solid red; */
     width: 70%;
-    height: 4rem;
-    text-align: center;    
+    height: 80px;
+    text-align: center;
 }
-
 
 .cella {
     display: inline-block;
-    border: 1px solid rgb(43, 43, 43);
-    height: 100%;
-    width: 8%;    
+    border: 1px solid rgb(140, 140, 140);
+    height: 80px;
+    width: 80px;
     font-size: 2rem;
     font-weight: bold;
+    background-color: white;
 }
 
-.numero{    
-    vertical-align: middle;
-    padding: 1rem 0.5rem;
+.numero {
+    position: relative;
+    transform: translate(0, 50%);
 }
-
 
 .cellaEvidenziata {
     display: inline-block;
-    border: 1px solid rgb(43, 43, 43);
-    height: 100%;
-    width: 8%;    
+    border: 1px solid rgb(140, 140, 140);
+    height: 80px;
+    width: 80px;
     font-size: 2rem;
     font-weight: bold;
+    color: white;
     background-color: red;
+}
+
+#button,
+#button2 {
+    background-color: orangered;
+    font-weight: bold;
+    padding: 1rem;
+    color: beige;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.5rem;
+}
+
+#pulsanti {
+    position: absolute;
+    top: 43%;
+    left: 70%;
+    text-align: center;
+}
+
+#estratto {
+    font-weight: bold;
+    border-radius: 50%;
+    color: white;
+    background-color: red;
+    width: 12rem;
+    height: 12rem;
+    margin: 0 auto 6rem;
+}
+
+#estratto div {
+    font-size: 5rem;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
